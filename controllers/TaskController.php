@@ -6,8 +6,14 @@ include_once ROOT.'/models/Task.php';
 include_once ROOT.'/models/User.php';
 
 class TaskController {
-	public function actionIndex($page)
+	public function actionIndex($param)
 		{
+
+ 		    if($param != "1"){
+		        $page = explode("=",$param)[1];
+            }else{
+                $page = 1;
+            }
  		    $taskList = array();
 		    $taskList = Task::getTaskList($page);
             if(isset($_POST['sortsubmit'])){

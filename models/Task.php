@@ -13,9 +13,12 @@ class Task
         $taskList = array();
         $limit = 3;
         $startpoint = ($start-1)*3;
-        if(isset($_POST['sortsubmit'])){
+        if(!empty($_SESSION['sort'])){
+             $result = $db ->query("SELECT * FROM tasks ORDER BY ". $_SESSION['sort']."  LIMIT $startpoint, 3 ");
+        }
+        else if(isset($_POST['sort'])){
             $_SESSION['sort'] = $_POST['sort'];
-             $result = $db ->query("SELECT * FROM tasks ORDER BY ". $_POST['sort']."  LIMIT $startpoint, 3 ");
+            $result = $db ->query("SELECT * FROM tasks ORDER BY ". $_SESSION['sort']."  LIMIT $startpoint, 3 ");
         }
         else{
             $result = $db ->query("SELECT * FROM tasks  LIMIT $startpoint, 3 ");

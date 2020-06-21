@@ -54,7 +54,7 @@
 		<div id="page-bgtop">
 			<div id="page-bgbtm">
 				<div id="content">
-				    <form method ='POST'action = 'http://t77845a1.beget.tech/task/' >
+				    <form method ='POST'action = '/task' >
 				        Sort by: 
 				        <select name="sort" id="sort">
 				            <option value="task_author ASC"<?php
@@ -104,7 +104,7 @@
 
 					?>
 					<div class="post">
-						<h2 class="title">Email: <?php echo $task['email'].".";
+						<h2 class="title">Email: <?php echo $task['email'].$task['id'].".";
 						                            if($task['edited']){
 						                                echo '  Edited by Admin';
 						                            }
