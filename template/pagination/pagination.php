@@ -31,7 +31,7 @@
     				if ($counter == $page)
     					$pagination.= "<li><a class='current'>$counter</a></li>";
     				else
-    					$pagination.= "<li><a href='{$url}page=$counter'>$counter</a></li>";					
+    					$pagination.= "<li><a href='/task?page=$counter'>$counter</a></li>";					
     			}
     		}
     		elseif($lastpage > 5 + ($adjacents * 2))
@@ -43,46 +43,46 @@
     					if ($counter == $page)
     						$pagination.= "<li><a class='current'>$counter</a></li>";
     					else
-    						$pagination.= "<li><a href='{$url}page=$counter'>$counter</a></li>";					
+    						$pagination.= "<li><a href='/task?page=$counter'>$counter</a></li>";					
     				}
     				$pagination.= "<li class='dot'>...</li>";
-    				$pagination.= "<li><a href='{$url}page=$lpm1'>$lpm1</a></li>";
-    				$pagination.= "<li><a href='{$url}page=$lastpage'>$lastpage</a></li>";		
+    				$pagination.= "<li><a href='/task?page=$lpm1'>$lpm1</a></li>";
+    				$pagination.= "<li><a href='/task?page=$lastpage'>$lastpage</a></li>";		
     			}
     			elseif($lastpage - ($adjacents * 2) > $page && $page > ($adjacents * 2))
     			{
-    				$pagination.= "<li><a href='{$url}page=1'>1</a></li>";
-    				$pagination.= "<li><a href='{$url}page=2'>2</a></li>";
+    				$pagination.= "<li><a href='/task?page=1'>1</a></li>";
+    				$pagination.= "<li><a href='/task?page=2'>2</a></li>";
     				$pagination.= "<li class='dot'>...</li>";
     				for ($counter = $page - $adjacents; $counter <= $page + $adjacents; $counter++)
     				{
     					if ($counter == $page)
     						$pagination.= "<li><a class='current'>$counter</a></li>";
     					else
-    						$pagination.= "<li><a href='{$url}page=$counter'>$counter</a></li>";					
+    						$pagination.= "<li><a href='/task?page=$counter'>$counter</a></li>";					
     				}
     				$pagination.= "<li class='dot'>..</li>";
-    				$pagination.= "<li><a href='{$url}page=$lpm1'>$lpm1</a></li>";
-    				$pagination.= "<li><a href='{$url}page=$lastpage'>$lastpage</a></li>";		
+    				$pagination.= "<li><a href='/task?page=$lpm1'>$lpm1</a></li>";
+    				$pagination.= "<li><a href='/task?page=$lastpage'>$lastpage</a></li>";		
     			}
     			else
     			{
-    				$pagination.= "<li><a href='{$url}page=1'>1</a></li>";
-    				$pagination.= "<li><a href='{$url}page=2'>2</a></li>";
+    				$pagination.= "<li><a href='/task?page=1'>1</a></li>";
+    				$pagination.= "<li><a href='/task?page=2'>2</a></li>";
     				$pagination.= "<li class='dot'>..</li>";
     				for ($counter = $lastpage - (2 + ($adjacents * 2)); $counter <= $lastpage; $counter++)
     				{
     					if ($counter == $page)
     						$pagination.= "<li><a class='current'>$counter</a></li>";
     					else
-    						$pagination.= "<li><a href='{$url}page=$counter'>$counter</a></li>";					
+    						$pagination.= "<li><a href='/task?page=$counter'>$counter</a></li>";					
     				}
     			}
     		}
     		
     		if ($page < $counter - 1){ 
-    			$pagination.= "<li><a href='{$url}page=$next'>Next</a></li>";
-                $pagination.= "<li><a href='{$url}page=$lastpage'>Last</a></li>";
+    			$pagination.= "<li><a href='/task?page=$next'>Next</a></li>";
+                $pagination.= "<li><a href='/task?page=$lastpage'>Last</a></li>";
     		}else{
     			$pagination.= "<li><a class='current'>Next</a></li>";
                 $pagination.= "<li><a class='current'>Last</a></li>";
