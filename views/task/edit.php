@@ -36,7 +36,7 @@
     	<div id="header-wrapper">
 	       	<div id="header">
 		    	<div id="logo">
-				<h1><a href="#">Create Task </a></h1>
+				<h1><a href="#">Edit Task </a></h1>
 			</div>
 		</div>
 	</div>
